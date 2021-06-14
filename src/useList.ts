@@ -51,7 +51,7 @@ export function useList<T>(initialState: T[] = []): [T[], ListMutator<T>] {
             },
 
             removeAt: (index: number) => {
-                setList(prevList => prevList.splice(index, 1));
+                setList(prevList => prevList.filter((_, itemIndex) => index !== itemIndex));
             },
 
             clear: () => {
